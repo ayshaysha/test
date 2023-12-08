@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termin-Kalender</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        .wrapper {
+            display: flex;
+        }
+        
+        .wrapper .child {
+            border-right: 1px solid #ddd;
+            padding: 2px;
+        }
+
+        .wrapper .child:nth-last-child(1) {
+            border: none;
+        }
+
+        th,
+        td {
+            padding: 5px;
+            min-width: 50px;
+            min-height: 50px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .event1 {
+            background-color: aquamarine;
+        }
+
+        .event2 {
+            background-color: red;
+        }
+
+        .event3 {
+            background-color: green;
+        }
+
+        .event4 {
+            background-color: yellow;
+        }
+
+        .event5 {
+            background-color: violet;
+        }
+        
+        .event6 {
+            background-color: darkgray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Termin-Kalender</h1>
+
+    <div>
+        <button onclick="previousWeek()">Vorherige Woche</button>
+        <span id="currentWeek"></span>
+        <button onclick="nextWeek()">Nächste Woche</button>
+    </div>
+
+    <table id="calendar"></table>
+
+    <script>
+        const calendarTable = document.getElementById('calendar');
+        const currentWeekSpan = document.getElementById('currentWeek');
+        const today = new Date();
+        const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+        let currentWeekStart = new Date(today);
+        currentWeekStart.setDate(today.getDate() - today.getDay());
+        currentWeekStart.setUTCHours(0,0,0,0);
+
+        // Annahme: termine ist eine Liste von Terminen mit Start- und Enddatum
+		const termine = [
+		
+
+        { name: "Very Large Distributed Data Volumes",kindofactivity: "Exercise", room: "R92",start:new Date("2023-11-13T08:15"), end:new Date("2023-11-13T10:00")},
+        // Füge hier weitere Termine hinzu	
+		
+        ];
+
+
+        // Aktualisiere den Kalender beim Laden der Seite
+        window.onload = function () {
+            updateCalendar();
+        };
+
+        previousWeek = function () {
+            currentWeekStart.setDate(currentWeekStart.getDate() - 7);
+            updateCalendar();
+        };
+
+        nextWeek = function () {
+            currentWeekStart.setDate(currentWeekStart.getDate() + 7);
+            updateCalendar();
+        };
+
+        function updateCalendar() {
+            let courseNameToEventId = {
+            }
+
+            function getEventId(courseName) {
+                if(courseNameToEventId[courseName] === undefined){
+                    //console.log(courseName, Object.keys(courseNameToEventId).length)
+                    courseNameToEventId[courseName] = Object.keys(courseNameToEventId).length;
+                }
+                return courseNameToEventId[courseName] +1;
+            }
+            const weekEndDate = new Date(currentWeekStart.getFullYear(), currentWeekStart.getMonth(), currentWeekStart.getDate() + 6, 23, 59);
+
+            // Setze den Text für die aktuelle Woche
+            currentWeekSpan.textContent = `${currentWeekStart.toLocaleDateString()} - ${weekEndDate.toLocaleDateString()}`;
+            // Filtere Termine für die aktuelle Woche
+            const currentWeekEvents = termine.filter(event => event.start >= currentWeekStart && event.start <= weekEndDate);
+
+            // Baue den HTML-Code für den Kalender
+            let calendarHTML = '<tr><th>Zeit</th>';
+            for (let i = 0; i < 7; i++) {
+                const currentDate = new Date(currentWeekStart);
+                currentDate.setDate(currentWeekStart.getDate() + i);
+                calendarHTML += `<th>${dayNames[currentDate.getDay()]} ${currentDate.getDate()}/${currentDate.getMonth() +1}</th>`;
+            }
+            calendarHTML += '</tr>';
+
+            for (let hour = 8; hour < 18; hour++) {
+                calendarHTML += `<tr><td>${hour}:00 - ${hour + 1}:00</td>`;
+                for (let i = 0; i < 7; i++) {
+                    const currentDate = new Date(currentWeekStart);
+                    currentDate.setDate(currentWeekStart.getDate() + i);
+
+                    // Finde Termine, die in dieser Stunde und diesem Tag stattfinden
+                    const eventsForHour = currentWeekEvents.filter(event =>{
+                        return event.start.getHours() <= hour && event.end.getHours() > hour &&
+                        event.start.getDay() === currentDate.getDay()
+                    });
+
+
+                    // Wenn es Termine gibt, füge sie der Zelle hinzu
+                    if (eventsForHour.length > 0) {
+                        calendarHTML += '<td><div class="wrapper">';
+                        eventsForHour.forEach((event, idx) => {
+                            calendarHTML += `
+                                <div class="child event${getEventId(event.name)}">
+                                ${event.name}<br/>
+                                    ${event.kindofactivity}<br/>
+                                    ${event.room}
+                                </div>
+                            `;
+                        });
+                        calendarHTML += '</div></td>';
+                    } else {
+                        calendarHTML += '<td></td>';
+                    }
+                }
+                calendarHTML += '</tr>';
+            }
+
+            // Setze den HTML-Code in das calendarTable
+            calendarTable.innerHTML = calendarHTML;
+        }
+
+        updateCalendar();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ASCII"?>
+<tt:University xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:tt="http://www.example.org/tt">
+  <course department="//@department.0" name="Very Large Distributed Data Volumes">
+    <timeslot room="//@campus.0/@campusbuilding.1/@classroom.1" lecturer="//@lecturer.0" start="2022-08-17 09:00" end="2022-08-17 13:00"/>
+    <timeslot room="//@campus.0/@campusbuilding.1/@classroom.1" lecturer="//@lecturer.1" start="2022-08-18 09:00" end="2022-08-18 10:00"/>
+    <timeslot room="//@campus.0/@campusbuilding.2/@classroom.0" lecturer="//@lecturer.3" start="2022-08-16 08:00" end="2022-08-16 11:00"/>
+  </course>
+  <course department="//@department.0" name="Advanced Software Design">
+    <timeslot room="//@campus.0/@campusbuilding.1/@classroom.0" lecturer="//@lecturer.4" start="2023-08-21 12:00" end="2023-08-21 13:00"/>
+    <timeslot room="//@campus.0/@campusbuilding.1/@classroom.0" lecturer="//@lecturer.4" start="2023-08-28 12:00" end="2023-08-28 13:00"/>
+    <timeslot room="//@campus.0/@campusbuilding.1/@classroom.0" lecturer="//@lecturer.4" start="2023-09-04 12:00" end="2023-09-04 13:00"/>
+    <timeslot room="//@campus.0/@campusbuilding.1/@classroom.0" lecturer="//@lecturer.4" start="2023-09-11 12:00" end="2023-09-11 13:00"/>
+    <timeslot room="//@campus.0/@campusbuilding.1/@classroom.0" lecturer="//@lecturer.4" start="2023-09-18 12:00" end="2023-09-18 13:00"/>
+    <timeslot room="//@campus.0/@campusbuilding.1/@classroom.0" lecturer="//@lecturer.4" start="2023-09-25 12:00" end="2023-09-25 13:00"/>
+    <timeslot room="//@campus.0/@campusbuilding.1/@classroom.0" lecturer="//@lecturer.4" start="2023-10-02 12:00" end="2023-10-02 13:00"/>
+    <timeslot room="//@campus.0/@campusbuilding.1/@classroom.0" lecturer="//@lecturer.4" start="2023-10-09 12:00" end="2023-10-09 13:00"/>
+  </course>
+  <lecturer firstName="Max" lastName="Mustermann" timeslot="//@course.0/@timeslot.0"/>
+  <lecturer firstName="Joe" lastName="Don" ID="3" timeslot="//@course.0/@timeslot.1"/>
+  <lecturer firstName="Tony" lastName="Stark" ID="5"/>
+  <lecturer firstName="Captain" lastName="America" ID="9" timeslot="//@course.0/@timeslot.2"/>
+  <lecturer firstName="Peter" lastName="Pan" ID="12" timeslot="//@course.1/@timeslot.0 //@course.1/@timeslot.1 //@course.1/@timeslot.2 //@course.1/@timeslot.3 //@course.1/@timeslot.4 //@course.1/@timeslot.5 //@course.1/@timeslot.6 //@course.1/@timeslot.7"/>
+  <department name="Computer Science"/>
+  <department name="Medicine and Health Sciences"/>
+  <campus name="Gl&#xf8;shaugen" ID="1">
+    <campusbuilding name="Realfagbygget" ID="1">
+      <classroom name="R92" capacity="75" mazeMapsLink="" ID="1"/>
+      <classroom name="R1" capacity="40" mazeMapsLink="" ID="2"/>
+    </campusbuilding>
+    <campusbuilding name="Ancient Building" ID="2">
+      <classroom name="H1" capacity="60" mazeMapsLink="" ID="3"/>
+      <classroom name="H2" capacity="45" mazeMapsLink="" ID="4"/>
+    </campusbuilding>
+    <campusbuilding name="Electro" ID="4">
+      <classroom name="F3" capacity="160" mazeMapsLink="" ID="5"/>
+      <classroom name="F5" capacity="90" mazeMapsLink="" ID="6"/>
+      <classroom name="F6" capacity="70" mazeMapsLink="" ID="7"/>
+    </campusbuilding>
+  </campus>
+  <campus name="Dragvoll" ID="2">
+    <campusbuilding name="Building1" ID="6">
+      <classroom name="room1" capacity="35" mazeMapsLink="" ID="8"/>
+      <classroom name="room2" capacity="50" mazeMapsLink="" ID="9"/>
+    </campusbuilding>
+    <campusbuilding name="Building2" ID="5">
+      <classroom name="room3" capacity="65" mazeMapsLink="" ID="10"/>
+      <classroom name="room4" capacity="55" mazeMapsLink="" ID="11"/>
+    </campusbuilding>
+  </campus>
+  <campus name="Elgeseter" ID="3">
+    <campusbuilding name="Building3" ID="8">
+      <classroom name="room5" capacity="85" mazeMapsLink="" ID="12"/>
+      <classroom name="room6" capacity="30" mazeMapsLink="" ID="13"/>
+    </campusbuilding>
+    <campusbuilding name="Building4" ID="9">
+      <classroom name="room7" capacity="95" mazeMapsLink="" ID="14"/>
+    </campusbuilding>
+  </campus>
+</tt:University>

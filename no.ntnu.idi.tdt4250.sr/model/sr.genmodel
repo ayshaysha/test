@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/no.ntnu.idi.tdt4250.sr/src-gen" creationIcons="false"
+    editDirectory="/no.ntnu.idi.tdt4250.sr.edit/src-gen" editorDirectory="/no.ntnu.idi.tdt4250.sr.editor/src-gen"
+    modelPluginID="no.ntnu.idi.tdt4250.sr" modelName="Sr" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="17.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>sr.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Sr" basePackage="no.ntnu.idi.tdt4250" disposableProviderFactory="true"
+      ecorePackage="sr.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sr.ecore#//DayOfWeek">
+      <genEnumLiterals ecoreEnumLiteral="sr.ecore#//DayOfWeek/Monday"/>
+      <genEnumLiterals ecoreEnumLiteral="sr.ecore#//DayOfWeek/Tuesday"/>
+      <genEnumLiterals ecoreEnumLiteral="sr.ecore#//DayOfWeek/Wednesday"/>
+      <genEnumLiterals ecoreEnumLiteral="sr.ecore#//DayOfWeek/Thursday"/>
+      <genEnumLiterals ecoreEnumLiteral="sr.ecore#//DayOfWeek/Friday"/>
+      <genEnumLiterals ecoreEnumLiteral="sr.ecore#//DayOfWeek/Saturday"/>
+      <genEnumLiterals ecoreEnumLiteral="sr.ecore#//DayOfWeek/Sunday"/>
+      <genEnumLiterals ecoreEnumLiteral="sr.ecore#//DayOfWeek/DoesntMatter"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="sr.ecore#//Calendar"/>
+    <genClasses ecoreClass="sr.ecore#//Courses">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sr.ecore#//Courses/courserequirement"/>
+    </genClasses>
+    <genClasses ecoreClass="sr.ecore#//CourseRequirement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sr.ecore#//CourseRequirement/courseperiod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sr.ecore#//CourseRequirement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="sr.ecore#//CoursePeriod">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sr.ecore#//CoursePeriod/campus"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sr.ecore#//CoursePeriod/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sr.ecore#//CoursePeriod/end"/>
+    </genClasses>
+    <genClasses ecoreClass="sr.ecore#//Campus">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sr.ecore#//Campus/campusbuilding"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sr.ecore#//Campus/ID"/>
+    </genClasses>
+    <genClasses ecoreClass="sr.ecore#//CampusBuilding">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sr.ecore#//CampusBuilding/room"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sr.ecore#//CampusBuilding/ID"/>
+    </genClasses>
+    <genClasses ecoreClass="sr.ecore#//Room">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sr.ecore#//Room/timeslot"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sr.ecore#//Room/capacity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sr.ecore#//Room/ID"/>
+    </genClasses>
+    <genClasses ecoreClass="sr.ecore#//TimeSlot">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sr.ecore#//TimeSlot/lecturer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sr.ecore#//TimeSlot/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sr.ecore#//TimeSlot/day"/>
+    </genClasses>
+    <genClasses ecoreClass="sr.ecore#//Lecturer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sr.ecore#//Lecturer/ID"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

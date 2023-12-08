@@ -1,0 +1,77 @@
+<university>
+  	<campus name="Gløshaugen" id="1">
+        <buildings>
+            <building name="Realfagbygget" id="1">
+                <rooms>
+                    <room id="1" name="R92" capacity="75"/>
+                    <room id="2" name="R1" capacity="40"/>
+                </rooms>
+            </building>
+            <building name="Ancient Building" id="2">
+                <rooms>
+                    <room id="3" name="H1" capacity="60"/>
+                    <room id="4" name="H2" capacity="45"/>
+                </rooms>
+            </building>
+            <building name="Electro" id="4">
+                <rooms>
+                    <room id="5" name="F3" capacity="160"/>
+                    <room id="6" name="F5" capacity="90"/>
+                    <room id="7" name="F6" capacity="70"/>
+                </rooms>
+            </building>
+        </buildings>
+    </campus>
+    <campus name="Dragvoll" id="2">
+        <buildings>
+            <building name="Building1" id="6">
+                <rooms>
+                    <room id="8" name="room1" capacity="35"/>
+                    <room id="9" name="room2" capacity="50"/>
+                </rooms>
+            </building>
+            <building name="Building2" id="5">
+                <rooms>
+                    <room id="10" name="room3" capacity="65"/>
+                    <room id="11" name="room4" capacity="55"/>
+                </rooms>
+            </building>
+        </buildings>
+    </campus>
+    <campus name="Elgeseter" id="3">
+        <buildings>
+            <building name="Building3" id="8">
+                <rooms>
+                    <room id="12" name="room5" capacity="85"/>
+                    <room id="13" name="room6" capacity="30"/>
+                </rooms>
+            </building>
+            <building name="Building4" id="9">
+                <rooms>
+                    <room id="14" name="room7" capacity="95"/>
+                </rooms>
+            </building>
+        </buildings>
+    </campus>
+    <departments>
+    	<department name="Computer Science">
+    		<courses>
+    			<course name="Very Large Distributed Data Volumes"/>
+    			<course name="Advanced Software Design"/>
+    		</courses>
+    	</department>
+    	<department name="Medicine and Health Sciences">
+    		<courses>
+    			<course name="First Comprehensive Medical Exam"/>
+    			<course name="ANOVA models"/>
+    		</courses>
+    	</department>
+    </departments>
+    <lecturers>
+    	<lecturer firstname="Max" lastname="Mustermann" id="0"/>
+    	<lecturer firstname="Joe" lastname="Don" id="3"/>
+    	<lecturer firstname="Tony" lastname="Stark" id="5"/>
+    	<lecturer firstname="Captain" lastname="America" id="9"/>
+    	<lecturer firstname="Peter" lastname="Pan" id="12"/>
+    </lecturers>
+</university>
