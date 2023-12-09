@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.yourcompany</groupId>
-        <artifactId>your-root-artifact-id</artifactId>
+        <artifactId>120-id</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>module-artifact-id</artifactId>
+    <artifactId>121-id</artifactId>
 
     <dependencies>
         <!-- Module specific dependencies -->
