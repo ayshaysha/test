@@ -1,18 +1,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
+    <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.example.project</groupId>
-        <artifactId>parent-project</artifactId>
+        <groupId>com.yourcompany</groupId>
+        <artifactId>your-root-artifact-id</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>no.ntnu.idi.tdt4250.html</artifactId>
+    <artifactId>module-artifact-id</artifactId>
 
     <dependencies>
-        <!-- Add module specific dependencies here -->
+        <!-- Module specific dependencies -->
     </dependencies>
+
+    <build>
+        <!-- Module specific build configurations -->
+    </build>
 
 </project>
