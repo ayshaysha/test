@@ -1,37 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.yourcompany</groupId>
-    <artifactId>120-id</artifactId>
+
+    <groupId>com.example.project</groupId>
+    <artifactId>parent-project</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-
-    <name>Your Root Project Name</name>
-    <description>Root project description</description>
 
     <modules>
         <module>Model2iCalendar</module>
         <module>no.ntnu.idi.tdt4250.html</module>
         <module>no.ntnu.idi.tdt4250.scheduling</module>
-        <!-- Add other modules here -->
     </modules>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <xtext.version>2.25.0</xtext.version> <!-- Specify your Xtext version -->
-        <sirius.version>6.4.0</sirius.version> <!-- Specify your Sirius version -->
-    </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <!-- Add common dependencies here -->
-        </dependencies>
-    </dependencyManagement>
-
-    <build>
-        <!-- Common build configurations -->
-    </build>
 
 </project>
