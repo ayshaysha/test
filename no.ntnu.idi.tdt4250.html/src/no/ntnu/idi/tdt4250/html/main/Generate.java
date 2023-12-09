@@ -335,17 +335,11 @@ public class Generate extends AbstractAcceleoGenerator {
      * 
      * @param resourceSet
      *            The resource set which registry has to be updated.
-     * @generated NOT
+     * @generated
      */
     @Override
     public void registerPackages(ResourceSet resourceSet) {
         super.registerPackages(resourceSet);
-        if (!isInWorkspace(no.ntnu.idi.tdt4250.tt.TtPackage.class)) {
-            resourceSet.getPackageRegistry().put(no.ntnu.idi.tdt4250.tt.TtPackage.eINSTANCE.getNsURI(), no.ntnu.idi.tdt4250.tt.TtPackage.eINSTANCE);
-        }
-        if (!isInWorkspace(no.ntnu.idi.tdt4250.sr.SrPackage.class)) {
-            resourceSet.getPackageRegistry().put(no.ntnu.idi.tdt4250.sr.SrPackage.eINSTANCE.getNsURI(), no.ntnu.idi.tdt4250.sr.SrPackage.eINSTANCE);
-        }
         
         /*
          * If you want to change the content of this method, do NOT forget to change the "@generated"

@@ -1,3 +1,6 @@
+
+Fri Dec 08 19:16:29 CET 2023
+================================================================================
 /*******************************************************************************
  * Copyright (c) 2008, 2012 Obeo.
  * All rights reserved. This program and the accompanying materials
@@ -8,7 +11,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package Model2iCalendar.main;
+package no.ntnu.idi.tdt4250.html.main;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,14 +38,14 @@ public class Generate extends AbstractAcceleoGenerator {
      *
      * @generated
      */
-    public static final String MODULE_FILE_NAME = "/Model2iCalendar/main/generate";
+    public static final String MODULE_FILE_NAME = "/no/ntnu/idi/tdt4250/html/main/generate";
     
     /**
      * The name of the templates that are to be generated.
      *
      * @generated
      */
-    public static final String[] TEMPLATE_NAMES = { "generateICalEntry" };
+    public static final String[] TEMPLATE_NAMES = { "generateTimetable" };
     
     /**
      * The list of properties files from the launch parameters (Launch configuration).
@@ -335,11 +338,17 @@ public class Generate extends AbstractAcceleoGenerator {
      * 
      * @param resourceSet
      *            The resource set which registry has to be updated.
-     * @generated
+     * @generated NOT
      */
     @Override
     public void registerPackages(ResourceSet resourceSet) {
         super.registerPackages(resourceSet);
+        if (!isInWorkspace(no.ntnu.idi.tdt4250.tt.TtPackage.class)) {
+            resourceSet.getPackageRegistry().put(no.ntnu.idi.tdt4250.tt.TtPackage.eINSTANCE.getNsURI(), no.ntnu.idi.tdt4250.tt.TtPackage.eINSTANCE);
+        }
+        if (!isInWorkspace(no.ntnu.idi.tdt4250.sr.SrPackage.class)) {
+            resourceSet.getPackageRegistry().put(no.ntnu.idi.tdt4250.sr.SrPackage.eINSTANCE.getNsURI(), no.ntnu.idi.tdt4250.sr.SrPackage.eINSTANCE);
+        }
         
         /*
          * If you want to change the content of this method, do NOT forget to change the "@generated"

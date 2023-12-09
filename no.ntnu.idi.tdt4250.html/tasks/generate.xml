@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="generate" name="no.ntnu.idi.tdt4250.html">
-    <property name="ECLIPSE_HOME" value="../../../eclipse/modeling-2023-06/Eclipse.app/Contents/Eclipse"/>
-    <property name="ECLIPSE_WORKSPACE" value="../../../runtime-EclipseApplication"/>
+    <property name="ECLIPSE_HOME" value="../../../../../eclipse/java-2023-09/eclipse"/>
+    <property name="ECLIPSE_WORKSPACE" value="../../../../../eclipse-workspace"/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="no.ntnu.idi.tdt4250.html.libraryclasspath">
