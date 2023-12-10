@@ -1,7 +1,0 @@
-[comment encoding = UTF-8 /]
-[module generateICalDateString('http://www.example.org/tt')/]
-
-[query public convertCalToString(arg0 : Calendar) : String
-	= invoke('Model2iCalendar.CalendarToStringICal', 'convertCalToString(java.util.Calendar)', Sequence{arg0})
-/]
-
