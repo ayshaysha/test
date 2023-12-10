@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tt:University
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:tt="http://www.example.org/tt">
+  <course coordinator="1"
+      department="//@department.0"
+      name="Advanced Software Design">
+    <timeslot
+        room="//@campus.0/@campusbuilding.0/@classroom.0"
+        lecturer="//@lecturer.0"
+        start="2023-09-01 12:15"
+        end="2023-09-01 14:00"
+        kindofactivity="Exercise"/>
+    <timeslot
+        room="//@campus.0/@campusbuilding.0/@classroom.1"
+        lecturer="//@lecturer.0"
+        start="2023-11-21 12:15"
+        end="2023-11-21 14:00"/>
+  </course>
+  <course coordinator="//@coordinator.0"
+      department="//@department.0"
+      name="Very Large Distributed Data Volumes">
+    <timeslot
+        room="//@campus.0/@campusbuilding.1/@classroom.0"
+        lecturer="//@lecturer.1"
+        start="2023-11-13 08:15"
+        end="2023-11-13 10:00"
+        kindofactivity="Exercise"/>
+  </course>
+  <coordinator
+      firstName="Hello"
+      lastName="World"/>
+  <coordinator
+      firstName="Max"
+      lastName="Mustermann"
+      ID="1"/>
+  <lecturer
+      firstName="Leonardo"
+      lastName="Montecchi"
+      timeslot="//@course.0/@timeslot.0 //@course.0/@timeslot.1"/>
+  <lecturer
+      firstName="Svein"
+      lastName="Bratsberg"
+      timeslot="//@course.1/@timeslot.0"/>
+  <department
+      name="Computer Science"/>
+  <campus name="Gløshaugen">
+    <campusbuilding
+        name="Ancient Building">
+      <classroom
+          name="H1"
+          capacity="150"
+          mazeMapsLink="https://www.i.dont.care.com"/>
+      <classroom
+          name="H2"
+          capacity="90"
+          mazeMapsLink="https://www.i.still.dont.care.com"/>
+    </campusbuilding>
+    <campusbuilding
+        name="Realfagbygget">
+      <classroom
+          name="R92"
+          capacity="90"
+          mazeMapsLink="http://use.mazemap.com/?v=1&amp;campuses=ntnu&amp;sharepoitype=identifier&amp;sharepoi=360-DU1-102"/>
+    </campusbuilding>
+  </campus>
+</tt:University>

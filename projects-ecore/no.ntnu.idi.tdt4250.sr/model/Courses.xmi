@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sr:Courses
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:sr="http://www.example.org/sr">
+  <courserequirement
+      name="Very Large Distributed Data Volumes">
+    <courseperiod
+        start="2022-08-15 00:00"
+        end="2022-08-22 18:00">
+      <campus
+          ID="1">
+        <campusbuilding
+            ID="2">
+          <room
+              ID="4">
+            <timeslot
+                duration="4"/>
+            <timeslot
+                duration="1">
+              <lecturer
+                  ID="3"/>
+            </timeslot>
+          </room>
+        </campusbuilding>
+        <campusbuilding
+            ID="4">
+          <room
+              capacity="150">
+            <timeslot
+                duration="3"
+                day="Tuesday">
+              <lecturer
+                  ID="9"/>
+            </timeslot>
+          </room>
+        </campusbuilding>
+      </campus>
+    </courseperiod>
+  </courserequirement>
+  <courserequirement
+      name="Advanced Software Design">
+    <courseperiod
+        start="2023-08-15 00:00"
+        end="2023-10-11 23:59">
+      <campus
+          ID="1">
+        <campusbuilding
+            ID="2">
+          <room
+              ID="3">
+            <timeslot
+                duration="1"
+                day="Monday"/>
+          </room>
+        </campusbuilding>
+      </campus>
+      <campus>
+        <campusbuilding>
+          <room
+              ID="8"/>
+        </campusbuilding>
+      </campus>
+    </courseperiod>
+  </courserequirement>
+</sr:Courses>
