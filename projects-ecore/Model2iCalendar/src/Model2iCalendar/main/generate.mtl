@@ -1,0 +1,78 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.example.org/tt', 'http://www.example.org/sr')]
+[import Model2iCalendar::common::generateICalDateString /]
+
+[template public generateICalEntry(anUniversity : University)]
+[comment @main/]
+
+[comment encoding = UTF-8 
+
+Generate .ics files for 
+1. all courses
+2. per-course .ics file
+3. per lecturer .ics file
+
+/]
+
+[file ('icalallcourses.ics', false, 'UTF-8')]
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//YourCompany//YourApp//EN
+[for (course : Course | anUniversity.course)]
+[for (entry : TimeSlot | course.timeslot)]
+BEGIN:VEVENT
+DTSTAMP:20231129T144000Z
+UID: [entry.start.convertCalToString()/]
+SUMMARY:[course.name/] 
+DTSTART:[entry.start.convertCalToString()/]
+DTEND:[entry.end.convertCalToString()/]
+LOCATION:[entry.room.name/]
+DESCRIPTION:[entry.kindofactivity/]- [course.name/], [entry.room.mazeMapsLink/] 
+END:VEVENT
+[/for]
+[/for]
+END:VCALENDAR
+[/file]
+
+[for (course : Course | anUniversity.course)]
+[file ('iCal'+ course.name.replaceAll(' ', '').toLower() +'.ics', false, 'UTF-8')]
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//YourCompany//YourApp//EN
+[for (entry : TimeSlot | course.timeslot)]
+BEGIN:VEVENT
+DTSTAMP:20231129T144000Z
+UID: [entry.start.convertCalToString()/]
+SUMMARY:[course.name/] 
+DTSTART:[entry.start.convertCalToString()/]
+DTEND:[entry.end.convertCalToString()/]
+LOCATION:[entry.room.name/]
+DESCRIPTION:[entry.kindofactivity/]- [course.name/], [entry.room.mazeMapsLink/] 
+END:VEVENT
+[/for]
+END:VCALENDAR
+[/file]
+[/for]
+
+
+[for (lecturer : Lecturer | anUniversity.lecturer)]
+[file ('iCal'+ lecturer.firstName.toLower()+lecturer.lastName.toLower() + '.ics', false, 'UTF-8')]
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//YourCompany//YourApp//EN
+[for (entry : TimeSlot | lecturer.timeslot)]
+BEGIN:VEVENT
+DTSTAMP:20231129T144000Z
+UID: [entry.start.convertCalToString()/]
+SUMMARY:[lecturer.firstName+' '+lecturer.lastName/] 
+DTSTART:[entry.start.convertCalToString()/]
+DTEND:[entry.end.convertCalToString()/]
+LOCATION:[entry.room.name/]
+DESCRIPTION:[entry.kindofactivity/]- [lecturer.firstName+' '+lecturer.lastName/], [entry.room.mazeMapsLink/] 
+END:VEVENT
+[/for]
+END:VCALENDAR
+[/file]
+[/for]
+
+[/template]

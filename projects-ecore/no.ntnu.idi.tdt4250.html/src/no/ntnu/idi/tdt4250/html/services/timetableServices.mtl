@@ -1,0 +1,7 @@
+[comment encoding = UTF-8 /]
+[module timetableServices('http://www.example.org/tt')/]
+
+[query public convertCalendarToString(arg0 : Calendar) : String
+	= invoke('no.ntnu.idi.tdt4250.html.services.convertCalendarToString', 'convertCalendarToString(java.util.Calendar)', Sequence{arg0})
+/]
+

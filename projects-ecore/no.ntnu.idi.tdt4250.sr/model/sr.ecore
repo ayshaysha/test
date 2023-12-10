@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sr" nsURI="http://www.example.org/sr" nsPrefix="sr">
+  <eClassifiers xsi:type="ecore:EClass" name="Courses">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="courserequirement" upperBound="-1"
+        eType="#//CourseRequirement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CourseRequirement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="courseperiod" upperBound="-1"
+        eType="#//CoursePeriod" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CoursePeriod">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="validTimeperiod"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="campus" upperBound="-1"
+        eType="#//Campus" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="#//Calendar"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" eType="#//Calendar"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Campus">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="onlyOneIDisGiven"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="campusbuilding" upperBound="-1"
+        eType="#//CampusBuilding" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="-1" iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CampusBuilding">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="room" upperBound="-1" eType="#//Room"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="-1" iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Room">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timeslot" upperBound="-1"
+        eType="#//TimeSlot" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="capacity" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="-1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="-1" iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeSlot">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="durationIsPositive"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lecturer" upperBound="-1"
+        eType="#//Lecturer" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="2"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="day" eType="#//DayOfWeek"
+        defaultValueLiteral="DoesntMatter"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Calendar" instanceClassName="java.util.Calendar"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="DayOfWeek">
+    <eLiterals name="Monday"/>
+    <eLiterals name="Tuesday" value="1"/>
+    <eLiterals name="Wednesday" value="2"/>
+    <eLiterals name="Thursday" value="3"/>
+    <eLiterals name="Friday" value="4"/>
+    <eLiterals name="Saturday" value="5"/>
+    <eLiterals name="Sunday" value="6"/>
+    <eLiterals name="DoesntMatter" value="7"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Lecturer">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="idsAreValid"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="-1" unsettable="true" iD="true"/>
+  </eClassifiers>
+</ecore:EPackage>
