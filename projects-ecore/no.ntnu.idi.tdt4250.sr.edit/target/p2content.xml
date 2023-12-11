@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<units size='1'>
+  <unit id='no.ntnu.idi.tdt4250.sr.edit' version='1.0.0.202312102257' generation='2'>
+    <update id='no.ntnu.idi.tdt4250.sr.edit' range='[0.0.0,1.0.0.202312102257)' severity='0'/>
+    <properties size='9'>
+      <property name='df_LT.pluginName' value='no.ntnu.idi.tdt4250.sr Edit Support'/>
+      <property name='df_LT.providerName' value='www.example.org'/>
+      <property name='org.eclipse.equinox.p2.name' value='%pluginName'/>
+      <property name='org.eclipse.equinox.p2.provider' value='%providerName'/>
+      <property name='org.eclipse.equinox.p2.bundle.localization' value='plugin'/>
+      <property name='maven-groupId' value='no.ntnu.tdt4250'/>
+      <property name='maven-artifactId' value='no.ntnu.idi.tdt4250.sr.edit'/>
+      <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+      <property name='maven-type' value='eclipse-plugin'/>
+    </properties>
+    <provides size='6'>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='no.ntnu.idi.tdt4250.sr.edit' version='1.0.0.202312102257'/>
+      <provided namespace='osgi.bundle' name='no.ntnu.idi.tdt4250.sr.edit' version='1.0.0.202312102257'/>
+      <provided namespace='java.package' name='no.ntnu.idi.tdt4250.sr.provider' version='0.0.0'/>
+      <provided namespace='osgi.identity' name='no.ntnu.idi.tdt4250.sr.edit' version='1.0.0.202312102257'>
+        <properties size='1'>
+          <property name='type' value='osgi.bundle'/>
+        </properties>
+      </provided>
+      <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+      <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
+    </provides>
+    <requires size='4'>
+      <required namespace='osgi.bundle' name='org.eclipse.core.runtime' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='no.ntnu.idi.tdt4250.sr' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.emf.edit' range='0.0.0'/>
+      <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=17))'>
+        <description>
+          no.ntnu.idi.tdt4250.sr.edit
+        </description>
+      </requiredProperties>
+    </requires>
+    <artifacts size='1'>
+      <artifact classifier='osgi.bundle' id='no.ntnu.idi.tdt4250.sr.edit' version='1.0.0.202312102257'/>
+    </artifacts>
+    <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+    <touchpointData size='1'>
+      <instructions size='1'>
+        <instruction key='manifest'>
+          Bundle-SymbolicName: no.ntnu.idi.tdt4250.sr.edit;singleton:=true&#xA;Bundle-Version: 1.0.0.202312102257&#xA;
+        </instruction>
+      </instructions>
+    </touchpointData>
+  </unit>
+</units>

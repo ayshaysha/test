@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: no.ntnu.idi.tdt4250.tt;singleton:=true
+Automatic-Module-Name: no.ntnu.idi.tdt4250.tt
+Bundle-Version: 0.1.0.202312102257
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: no.ntnu.idi.tdt4250.tt,no.ntnu.idi.tdt4250.tt.impl,no.nt
+ nu.idi.tdt4250.tt.util
+Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,org.eclipse.c
+ ore.runtime
+Bundle-ActivationPolicy: lazy
+

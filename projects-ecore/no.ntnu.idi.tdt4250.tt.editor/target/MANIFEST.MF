@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: no.ntnu.idi.tdt4250.tt.editor;singleton:=true
+Automatic-Module-Name: no.ntnu.idi.tdt4250.tt.editor
+Bundle-Version: 1.0.0.202312102257
+Bundle-ClassPath: .
+Bundle-Activator: no.ntnu.idi.tdt4250.tt.presentation.TtEditorPlugin$Imp
+ lementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: no.ntnu.idi.tdt4250.tt.presentation
+Require-Bundle: org.eclipse.core.runtime,org.eclipse.core.resources;visi
+ bility:=reexport,no.ntnu.idi.tdt4250.tt.edit;visibility:=reexport,org.e
+ clipse.emf.ecore.xmi;visibility:=reexport,org.eclipse.emf.edit.ui;visib
+ ility:=reexport,org.eclipse.ui.ide;visibility:=reexport
+Bundle-ActivationPolicy: lazy
+

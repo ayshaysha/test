@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: no.ntnu.idi.tdt4250.sr.edit;singleton:=true
+Automatic-Module-Name: no.ntnu.idi.tdt4250.sr.edit
+Bundle-Version: 1.0.0.202312102257
+Bundle-ClassPath: .
+Bundle-Activator: no.ntnu.idi.tdt4250.sr.provider.SrEditPlugin$Implement
+ ation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: no.ntnu.idi.tdt4250.sr.provider
+Require-Bundle: org.eclipse.core.runtime,no.ntnu.idi.tdt4250.sr;visibili
+ ty:=reexport,org.eclipse.emf.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy
+

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='1.1.0'?>
+<artifacts size='1'>
+  <artifact classifier='osgi.bundle' id='no.ntnu.idi.tdt4250.sr' version='0.1.0.202312102257'>
+    <properties size='6'>
+      <property name='artifact.size' value='54144'/>
+      <property name='download.size' value='54144'/>
+      <property name='maven-groupId' value='no.ntnu.tdt4250'/>
+      <property name='maven-artifactId' value='no.ntnu.idi.tdt4250.sr'/>
+      <property name='maven-version' value='0.1.0-SNAPSHOT'/>
+      <property name='maven-type' value='eclipse-plugin'/>
+    </properties>
+  </artifact>
+</artifacts>
