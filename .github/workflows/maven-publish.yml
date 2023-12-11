@@ -28,7 +28,7 @@ jobs:
 
     - name: Build with Maven
       run: |
-         ls
+         cd projects-ecore
          mvn build 
 
     - name: Publish to GitHub Packages Apache Maven
