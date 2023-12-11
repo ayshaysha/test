@@ -1,13 +1,19 @@
-name: Build POM File
+# This workflow will build a package using Maven and then publish it to GitHub packages when a release is created
+# For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#apache-maven-with-a-settings-path
+
+name: Maven Package
 
 on:
-  push:
-    branches:
-      - main  # Change this to the branch you want to trigger the workflow
+  release:
+    types: [created]
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # You can change the runner environment if needed
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
 
     steps:
     - uses: actions/checkout@v3
@@ -19,7 +25,5 @@ jobs:
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
-    - name: Build POM
-          run: |
-          cd projects-ecore/pom.xml  # Replace with the actual path to your folder
-          mvn package  # Replace with the Maven command you want to run
+    - name: Build with Maven
+      run: cd projects-ecore/pom.xml; mvn -B package
